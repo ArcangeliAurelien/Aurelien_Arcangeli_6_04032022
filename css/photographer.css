@@ -8,6 +8,33 @@
     margin: 0 100px;
 }
 
+.header {
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.header h1 {
+    font-size: 64px;
+    color: #D3573C;
+    margin: 0;
+}
+
+.header h3 {
+    font-size: 24px;
+    color: #901C1C;
+}
+
+.header h4 {
+    font-size: 18px;
+    color: #525252;
+    font-weight:normal;
+}
+
+.header button {
+    margin-top: 50px;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -73,4 +100,11 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
