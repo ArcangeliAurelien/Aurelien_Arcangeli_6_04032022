@@ -108,3 +108,14 @@ form input {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.photoSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+}
+
+.media {
+    width: 350px;
+    height: 300px;
+}

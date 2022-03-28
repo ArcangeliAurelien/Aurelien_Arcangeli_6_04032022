@@ -1,6 +1,6 @@
 //Création de la card des photographes sur la page d'accueil
-function photographerFactory(data) {
-    const { name, id, city, country, tagline, price, portrait } = data
+export function photographerFactory(data) {
+    const { name, id, city, country, tagline, price, portrait, alt } = data
 
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`
 
@@ -16,7 +16,7 @@ function photographerFactory(data) {
         const p = document.createElement( 'p' )
         p.textContent = price + '€/jour'
         article.innerHTML = `<a href="photographer.html?photographer=${id}">
-                                <img src="${picture}" /></a>`
+                                <img src="${picture}" alt="${alt}" /></a>`
         article.appendChild(h2)
         article.appendChild(h3)
         article.appendChild(h4)
@@ -26,7 +26,8 @@ function photographerFactory(data) {
     return { name, picture, id, city, country, tagline, price, getUserCardDOM }
 }
 
-function profileFactory(data) {
+// Créer les pages pour chaque photographes
+export function profileFactory(data) {
     const { name, id, city, country, tagline, price, portrait } = data
 
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`
