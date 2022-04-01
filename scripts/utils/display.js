@@ -2,14 +2,15 @@ import { profileFactory } from "../factories/photographer.js";
 //import { mediaFactory } from "../factories/media.js"
 
 export async function getData() {
+    const response = await fetch("./data/photographers.json")
+    const data = await response.json()
+    //console.log(data);
+
     let verifyUrl = new URLSearchParams(window.location.search)
     //verifyUrl.has(photographer.id);
     let photographeId = verifyUrl.get('photographer')
     console.log(photographeId);
 
-    const response = await fetch("./data/photographers.json")
-    const data = await response.json()
-    console.log(data);
     const photographerProfile = data.photographers.find(e => e.id == photographeId)
     //console.log(photographerProfile);
 
@@ -21,6 +22,8 @@ export async function getData() {
         photographHeader.appendChild(profileCardDOM);
     }
 
-    return { photographerProfile }
-    
+    const portfolio = data.media
+    console.log(portfolio);
+
+    return { photographerProfile, portfolio, data }
 }

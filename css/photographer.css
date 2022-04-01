@@ -5,7 +5,7 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 100px;
 }
 
 .header {
@@ -109,13 +109,43 @@ form input {
     object-fit: cover;
 }
 
-.photoSection {
+.portfolio-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    column-gap: 20em;
+    margin: 0 100px;
 }
 
 .media {
     width: 350px;
     height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.photographer__content__text_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.photographer_content_post {
+    color: #901C1C;
+    margin: 0;
+    font-weight: lighter;
+}
+
+.photographer_content_likes {
+    display: flex;
+    align-items: center;
+    color: #901C1C;
+    
+}
+
+.photographer-button-like {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
 }
