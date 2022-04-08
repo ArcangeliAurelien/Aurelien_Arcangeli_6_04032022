@@ -12,8 +12,9 @@ export function createPhotographerMedia(photographerPersonalInfo) {
     let htmlMediaContent = "";
 
     const k = photographerPersonalInfo.length;
+    /*console.log(factory(photographerPersonalInfo[0]))
     console.log(factory(photographerPersonalInfo[1]))
-    console.log(factory(photographerPersonalInfo[8]))
+    console.log(factory(photographerPersonalInfo[8]))*/
     console.log(photographerPersonalInfo)
 
     for (let i = 0; i < k; i++) {
@@ -33,6 +34,7 @@ export function createPhotographerMedia(photographerPersonalInfo) {
             `
 
         //si le media contient un fichier JSON avec une video, alors ajouter cela : 
+        
 
     }
 

@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="css/lightbox.css">-->
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -22,15 +23,36 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form id="myForm">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="first">Prénom</label>
+						<input type="text" id="first"/>
+            <span id="erreurFirst" class="error"></span>
 					</div>
-          <button class="contact_button">Envoyer</button>
+
+          <div>
+            <label for="last">Nom</label>
+            <input type="text" id="last"/>
+            <span id="erreurLast" class="error"></span>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email"/>
+            <span id="erreurEmail" class="error"></span>
+          </div>
+
+          <div>
+            <label>Votre message</label>
+            <textarea name="textarea" id="textarea"></textarea>
+            <span id="erreurTextarea" class="error"></span>
+          </div>
+
+          <button class="contact_button" type="submit" onsubmit="validation()">Envoyer</button>
 				</form>
 			</div>
 		</div>
+
     <section class="portfolio-section"></section>
    
     <script type="module" src="scripts/pages/photographer.js"></script>

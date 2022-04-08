@@ -13,9 +13,6 @@ async function init() {
     const photographerInfo = getPhotographerInfo(photographeId, data)
 
     document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(photographerInfo.medias);
-
-
-    
 }
 
 init()

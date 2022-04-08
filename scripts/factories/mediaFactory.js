@@ -9,8 +9,6 @@
 
 export function factory(media) {
 
-    // Utilisation de la decomposition par affectation (destructuring assignment) https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
-
     const { image, video, alt } = media;
 
     if (image !== undefined) {

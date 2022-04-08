@@ -1,5 +1,4 @@
 import { profileFactory } from "../factories/photographer.js";
-//import { mediaFactory } from "../factories/media.js"
 
 export async function getData() {
     const response = await fetch("./data/photographers.json")
