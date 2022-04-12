@@ -56,6 +56,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.contact_button:hover {
+    background-color: #D3573C;
+    color: black;
+}
 
 /*--------------------------------------------------------------------------*/
 
@@ -190,7 +194,7 @@ form textarea {
     display: flex;
     align-items: center;
     color: #901C1C;
-    
+    cursor: pointer;
 }
 
 .photographer-button-like {

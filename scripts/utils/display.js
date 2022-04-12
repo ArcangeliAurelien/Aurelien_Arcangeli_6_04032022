@@ -21,8 +21,5 @@ export async function getData() {
         photographHeader.appendChild(profileCardDOM);
     }
 
-    const portfolio = data.media
-    console.log(portfolio);
-
-    return { photographerProfile, portfolio, data }
+    return { photographerProfile, data }
 }

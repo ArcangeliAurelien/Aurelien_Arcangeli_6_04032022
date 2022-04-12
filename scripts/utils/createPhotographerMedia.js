@@ -1,4 +1,5 @@
 import { factory } from '../factories/mediaFactory.js';
+//import { counterLikes } from './counterLikes.js';
 "use strict";
 
 /** 
@@ -25,17 +26,16 @@ export function createPhotographerMedia(photographerPersonalInfo) {
                         ${factory(photographerPersonalInfo[i])}
                         <div class="photographer__content__text_wrapper">
                             <h3 class="photographer_content_post">${photographerPersonalInfo[i].title}</h3>
-                            <div class="photographer_content_likes">
-                                <span class="nbr_of_likes">${photographerPersonalInfo[i].likes}</span>
+                            <div id="likes" class="photographer_content_likes">
+                                <span id="nb_likes" class="nbr_of_likes">${photographerPersonalInfo[i].likes}</span>
                                 <img tabindex="5" class="photographer-button-like" data-like="No like" src="img/heart.svg" alt="heart">
                             </div>
                         </div>
                 </article>
             `
-
+        
         //si le media contient un fichier JSON avec une video, alors ajouter cela : 
         
-
     }
 
     return htmlMediaContent;
