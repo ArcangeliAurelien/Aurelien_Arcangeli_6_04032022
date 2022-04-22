@@ -28,7 +28,7 @@ export function photographerFactory(data) {
 
 // Créer les pages pour chaque photographes
 export function profileFactory(data) {
-    const { name, id, city, country, tagline, price, portrait } = data
+    const { name, city, country, tagline, portrait } = data
 
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`
 
@@ -45,5 +45,6 @@ export function profileFactory(data) {
 
         return (div)
     }
+
     return { name, city, country, tagline, getProfilePhotographerDOM }
 }

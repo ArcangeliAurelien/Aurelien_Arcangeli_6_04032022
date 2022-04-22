@@ -1,5 +1,5 @@
 import { factory } from '../factories/mediaFactory.js';
-//import { counterLikes } from './counterLikes.js';
+
 "use strict";
 
 /** 
@@ -16,7 +16,7 @@ export function createPhotographerMedia(photographerPersonalInfo) {
     /*console.log(factory(photographerPersonalInfo[0]))
     console.log(factory(photographerPersonalInfo[1]))
     console.log(factory(photographerPersonalInfo[8]))*/
-    console.log(photographerPersonalInfo)
+    //console.log(photographerPersonalInfo)
 
     for (let i = 0; i < k; i++) {
 
