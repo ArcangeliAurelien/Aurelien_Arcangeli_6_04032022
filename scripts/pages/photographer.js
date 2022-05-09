@@ -3,13 +3,14 @@ import { getPhotographerInfo } from "../utils/getPhotographerInfo.js"
 import { createPhotographerMedia } from "../utils/createPhotographerMedia.js"
 import { counterLikes } from "../utils/counterLikes.js"
 import { getSortData } from "../utils/getSortData.js"
+import { lightbox } from "../utils/lightbox.js"
 
-
-let verifyUrl = new URLSearchParams(window.location.search)
-//verifyUrl.has(photographer.id);
-let photographeId = verifyUrl.get('photographer')
 
 async function init() {
+    let verifyUrl = new URLSearchParams(window.location.search)
+    //verifyUrl.has(photographer.id);
+    let photographeId = verifyUrl.get('photographer')
+    
     const { data } = await getData()
     const { medias } = getPhotographerInfo(photographeId, data)
 
@@ -21,6 +22,14 @@ async function init() {
 
     // Nombre de likes par média
     counterLikes(medias)
+
+    // Lightbox
+    const mediasElements = document.querySelectorAll(".media")
+    mediasElements.forEach((media, index) => {
+        media.addEventListener("click", () => {
+            lightbox(medias, medias[index])
+        })
+    })
 }
 
 init()

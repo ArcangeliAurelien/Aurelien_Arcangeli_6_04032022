@@ -1,8 +1,9 @@
 import { createPhotographerMedia } from "./createPhotographerMedia.js"
 import { counterLikes } from "./counterLikes.js"
+import { lightbox } from "./lightbox.js"
 
-export function getSortData(data) {
-    
+export function getSortData(medias) {
+
     // Créer la liste déroulante
     const main = document.querySelector("#main")
     const photographHeader = document.querySelector(".photograph-header")
@@ -53,7 +54,7 @@ export function getSortData(data) {
 
     const newSelect = document.createElement("div")
     newSelect.classList.add("newSelect")
-
+    
     newSelect.innerHTML = select.options[select.selectedIndex].innerHTML
 
     zoneSelect.appendChild(newSelect)
@@ -87,16 +88,19 @@ export function getSortData(data) {
         this.classList.toggle("active")
     })
 
-    
 
-    
-    // Tri des médias
-    function tri() {
 
-        newSelect.addEventListener("click", function (event) {
+    newMenu.addEventListener("click", function (event) {
+
+        const zoneInfo = document.querySelector(".zoneInfo")
+        zoneInfo.innerHTML = "";
+        
+        // Tri des médias
+        function tri() {
+
             if (event.target.innerHTML === "Populaire") {
                 //console.log("populaire")
-                const triPopulaire = data.sort((a, b) => {
+                const triPopulaire = medias.sort((a, b) => {
                     return b.likes - a.likes
                 })
                 document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triPopulaire)
@@ -104,7 +108,7 @@ export function getSortData(data) {
 
             if (event.target.innerHTML === "Date") {
                 //console.log("date")
-                const triDate = data.sort((a, b) => {
+                const triDate = medias.sort((a, b) => {
                     return new Date(b.date) - new Date(a.date)
                 })
                 document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triDate)
@@ -112,19 +116,24 @@ export function getSortData(data) {
 
             if (event.target.innerHTML === "Titre") {
                 //console.log("titre")
-                const triTitre = data.sort((a, b) => {
+                const triTitre = medias.sort((a, b) => {
                     return a.title.localeCompare(b.title)
                 })
                 document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triTitre)
             }
+            
             counterLikes()
-            event.stopPropagation()
-        })
 
-    }
+            const mediasElements = document.querySelectorAll(".media")
+            mediasElements.forEach((media, index) => {
+                media.addEventListener("click", () => {
+                    lightbox(medias, medias[index])
+                })
+            })
+        }
+        tri()
+    })
 
-    tri()
-    
     main.appendChild(sortContainer)
     
 }

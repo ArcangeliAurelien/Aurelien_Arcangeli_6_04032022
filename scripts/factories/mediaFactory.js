@@ -9,16 +9,15 @@
 
 export function factory(media) {
 
-    const { image, video, alt } = media;
+    const { image, video, title } = media;
 
     if (image !== undefined) {
 
-
-        return createImage(image, alt);
+        return createImage(image, title);
 
     }
 
-    return createVideo(video, alt);
+    return createVideo(video, title);
 
 }
 
@@ -31,7 +30,7 @@ function createImage(mediaSrc, altText) {
 
 function createVideo(mediaSrc, altText) {
 
-    return `<video tabindex="5" role="img" class="media video" alt="${altText}" data-alttxt="${altText}">
+    return `<video tabindex="5" role="img" class="media video" alt="${altText}" data-alttxt="${altText}" controls="controls">
                     <source src="img/photographs/${mediaSrc}" type="video/mp4">
                </video>`;
 

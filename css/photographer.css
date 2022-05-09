@@ -180,6 +180,7 @@ form textarea {
     height: 400px;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .photographer__content__text_wrapper {
@@ -305,17 +306,111 @@ form textarea {
     position: fixed;
     bottom: -10px;
     right: 30px;
-}
-
-.likeAndPrice {
     font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 20px;
+}
+
+.boxLikes {
+    display: flex;
+}
+
+.mediaLikesBox, .InfoPrice {
+    margin: 0;
+    margin-top: -5px;
 }
 
 .fa-heart {
     width: 20px;
     height: 20px;
+}
+
+/*--------------------------------------------------------------------------*/
+
+            /* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FAFAFA;
+    z-index: 20;
+}
+
+.lightbox_next {
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(../img/chevron-right-solid.svg) center center / 100% 100% no-repeat;
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    margin-top: 14px;
+    z-index: 21;
+}
+
+.lightbox_prev {
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(../img/chevron-left-solid.svg) center center / 100% 100% no-repeat;
+    position: fixed;
+    top: 50%;
+    right: auto;
+    left: 10%;
+    margin-top: 14px;
+    z-index: 21;
+}
+
+.lightbox_close {
+    border: none;
+    width: 50px;
+    height: 50px;
+    background: url(../img/close.svg) center center / 100% 100% no-repeat;
+    position: fixed;
+    top: 20px;
+    right: 10%;
+    z-index: 22;
+}
+
+.lightbox button {
+    cursor: pointer;
+    text-indent: -5000px;
+    transition: opacity 0.3s;
+}
+
+.lightbox_container {
+    margin-left: 50px;
+    margin-right: 50px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.lightbox_media {
+    max-height: 100%;
+    margin: 0;
+}
+
+.lightbox_media img,
+.lightbox_media video {
+    width: auto;
+    height: 800px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.lightbox_title {
+    font-size: 24px;
+    color: #901C1C;
+    width: 100%;
+    height: 30px;
+    text-align: start;
+    margin: 0;
 }
