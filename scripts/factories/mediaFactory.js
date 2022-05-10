@@ -7,7 +7,7 @@
    * @return {function}
  */
 
-export function factory(media) {
+export function factory(media,type="") {
 
     const { image, video, title } = media;
 
@@ -17,7 +17,7 @@ export function factory(media) {
 
     }
 
-    return createVideo(video, title);
+    return createVideo(video, title,type);
 
 }
 
@@ -28,9 +28,11 @@ function createImage(mediaSrc, altText) {
 
 }
 
-function createVideo(mediaSrc, altText) {
+function createVideo(mediaSrc, altText,type) {
 
-    return `<video tabindex="5" role="img" class="media video" alt="${altText}" data-alttxt="${altText}" controls="controls">
+    return `<video tabindex="5" role="img" class="media video" alt="${altText}" data-alttxt="${altText}" ${type === "light" ? "autoplay muted" : ""
+    }|
+>
                     <source src="img/photographs/${mediaSrc}" type="video/mp4">
                </video>`;
 

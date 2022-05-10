@@ -18,8 +18,10 @@ export function lightbox(medias, media) {
     const next = document.querySelector(".lightbox_next")
     const prev = document.querySelector(".lightbox_prev")
 
+    //Ouvrir la lightbox
     lightbox.style.display = "block"
     
+    //Fermer la lightbox
     close.addEventListener("click", () => {
         lightbox.style.display = "none"
     })
@@ -32,14 +34,21 @@ export function lightbox(medias, media) {
     const video = document.querySelector(".video")
 
     lightbox_media.innerHTML = `
-        ${factory(media)}
+        ${factory(media,"light")}
         <p class="lightbox_title">${media.title}</p>
     `
+    if (media.video !== undefined) {
+        
+        //factory(media).setAttribute("controls", true);
+    }
+    console.log(factory(media));
 
+    //Média suivant au clic sur la flèche droite
     next.addEventListener("click", () => {
         nextPicture()
     })
 
+    //Média précédent au clic sur la flèche gauche
     prev.addEventListener("click", () => {
         prevPicture()
     })
@@ -76,5 +85,19 @@ export function lightbox(medias, media) {
         return actuelMediaId = medias[actuelIndex - 1].id
     }
 
-}
+    //Navigation au clavier sur la lightbox
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            return lightbox.style.display = "none"
+        }
 
+        if (event.key === "ArrowRight") {
+            nextPicture()
+        }
+
+        if (event.key === "ArrowLeft") {
+            prevPicture()
+        }
+    })
+
+}
