@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <!--<link rel="stylesheet" href="css/lightbox.css">-->
@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="index.html" tabindex="1"><img src="assets/images/logo.png" class="logo" alt="logo" /></a>
     </header>
     <main id="main">
 
@@ -26,7 +26,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" alt="fermer" onclick="closeModal()" />
         </header>
 				<form id="myForm">
 					<div>
@@ -48,7 +48,7 @@
           </div>
 
           <div>
-            <label>Votre message</label>
+            <label for="textarea">Votre message</label>
             <textarea name="textarea" id="textarea"></textarea>
             <span id="erreurTextarea" class="error"></span>
           </div>

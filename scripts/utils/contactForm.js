@@ -11,6 +11,12 @@ function closeModal() {
 let myForm = document.getElementById('myForm');
 myForm.addEventListener('submit', validation);
 
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeModal()
+    }
+})
+
 // Expression régulière
 let myRegexName = /^[a-zA-Zàáâäçèéêëìíîïñòóôöùúûü-\s]+$/;
 let myRegexEmail = /^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$/;

@@ -26,16 +26,13 @@ export function createPhotographerMedia(photographerPersonalInfo) {
                         ${factory(photographerPersonalInfo[i])}
                         <div class="photographer__content__text_wrapper">
                             <h3 class="photographer_content_post">${photographerPersonalInfo[i].title}</h3>
-                            <div id="likes" class="photographer_content_likes">
+                            <div id="likes" class="photographer_content_likes" tabindex="5" >
                                 <span id="nb_likes" class="nbr_of_likes">${photographerPersonalInfo[i].likes}</span>
-                                <img tabindex="5" class="photographer-button-like" data-like="No like" src="img/heart.svg" alt="heart">
+                                <img class="photographer-button-like" data-like="No like" src="img/heart.svg" alt="heart">
                             </div>
                         </div>
                 </article>
             `
-        
-        //si le media contient un fichier JSON avec une video, alors ajouter cela : 
-        
     }
 
     return htmlMediaContent;

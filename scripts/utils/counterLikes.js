@@ -14,8 +14,11 @@ export function counterLikes() {
 
         const totalLike = document.createElement("div")
         totalLike.classList.add("totalLike")
+        const zonePrice = document.createElement("div")
+        zonePrice.classList.add("price")
         
         zoneInfo.appendChild(totalLike)
+        zoneInfo.appendChild(zonePrice)
         
         const likesButton = document.querySelectorAll('#likes')
         let nb_likes = document.querySelectorAll('.nbr_of_likes')
@@ -29,8 +32,9 @@ export function counterLikes() {
             //console.log(arrayCounterLike[i]);
             sum += arrayCounterLike[i]
 
-            totalLike.innerHTML = sum + " " + `<i class="fas fa-heart"></i>` + " " + price + "€/jour"
-                
+            totalLike.innerHTML = sum + " " + `<i class="fas fa-heart"></i>`
+            zonePrice.innerHTML = price + "€/jour"
+
             likes.addEventListener("click", () => {
 
                 let cpt = parseInt(nb_likes[i].textContent) + 1
@@ -38,11 +42,25 @@ export function counterLikes() {
 
                 let sumTotal = sum += 1
                 // console.log("total", sumTotal)
-                totalLike.innerHTML = sumTotal + " " + `<i class="fas fa-heart"></i>` + " " + price + "€/jour"
+                totalLike.innerHTML = sumTotal + " " + `<i class="fas fa-heart"></i>`
+                zonePrice.innerHTML = price + "€/jour"
                 
             })
-            
-            
+
+            // Evénement au clavier
+            likes.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    let cpt = parseInt(nb_likes[i].textContent) + 1
+                    nb_likes[i].innerHTML = cpt
+
+                    let sumTotal = sum += 1
+                    // console.log("total", sumTotal)
+                    totalLike.innerHTML = sumTotal + " " + `<i class="fas fa-heart"></i>`
+                    zonePrice.innerHTML = price + "€/jour"
+                    
+                }
+            })
         }
+        
     })
 }

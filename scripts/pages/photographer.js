@@ -26,8 +26,16 @@ async function init() {
     // Lightbox
     const mediasElements = document.querySelectorAll(".media")
     mediasElements.forEach((media, index) => {
+        // Evénement au clic
         media.addEventListener("click", () => {
             lightbox(medias, medias[index])
+        })
+        // Evénement au clavier
+        media.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                console.log("Entrer");
+                lightbox(medias, medias[index])
+            }
         })
     })
 }

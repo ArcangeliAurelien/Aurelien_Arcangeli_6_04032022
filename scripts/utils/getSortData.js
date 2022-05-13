@@ -51,10 +51,10 @@ export function getSortData(medias) {
     select.add(titre)
 
     // Custom de la liste déroulante
-
     const newSelect = document.createElement("div")
     newSelect.classList.add("newSelect")
-    
+    newSelect.setAttribute("tabindex", 3)
+
     newSelect.innerHTML = select.options[select.selectedIndex].innerHTML
 
     zoneSelect.appendChild(newSelect)
@@ -65,6 +65,7 @@ export function getSortData(medias) {
     for (let option of select.options) {
         const newOption = document.createElement("li")
         newOption.innerHTML = option.innerHTML
+        newOption.setAttribute("tabindex", 3)
 
         newOption.addEventListener("click", function () {
             for (let option of select.options) {
@@ -88,13 +89,11 @@ export function getSortData(medias) {
         this.classList.toggle("active")
     })
 
-
-
     newMenu.addEventListener("click", function (event) {
 
         const zoneInfo = document.querySelector(".zoneInfo")
         zoneInfo.innerHTML = "";
-        
+
         // Tri des médias
         function tri() {
 
@@ -121,9 +120,8 @@ export function getSortData(medias) {
                 })
                 document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triTitre)
             }
-            
-            counterLikes()
 
+            counterLikes()
             const mediasElements = document.querySelectorAll(".media")
             mediasElements.forEach((media, index) => {
                 media.addEventListener("click", () => {
@@ -132,8 +130,69 @@ export function getSortData(medias) {
             })
         }
         tri()
+
+    })
+
+// ---------- Evenement au clavier ----------
+
+    // Ouvre et fermer le select
+    newSelect.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.stopPropagation()
+            newSelect.nextSibling.classList.toggle("selectHide")
+            newSelect.classList.toggle("active")
+        }
+    })
+
+    // Sélectionne l'une des option du select et fait le tri
+    newMenu.addEventListener("keydown", function (event) {
+        const zoneInfo = document.querySelector(".zoneInfo")
+        zoneInfo.innerHTML = "";
+
+        if (event.key === "Enter" && event.target.innerHTML === "Populaire") {
+            //console.log("Populaire");
+            newSelect.nextSibling.classList.toggle("selectHide")
+            newSelect.classList.toggle("active")
+            newSelect.innerHTML = "Populaire"
+
+            const triPopulaire = medias.sort((a, b) => {
+                return b.likes - a.likes
+            })
+            document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triPopulaire)
+        }
+
+        if (event.key === "Enter" && event.target.innerHTML === "Date") {
+            //console.log("Date");
+            newSelect.nextSibling.classList.toggle("selectHide")
+            newSelect.classList.toggle("active")
+            newSelect.innerHTML = "Date"
+
+            const triDate = medias.sort((a, b) => {
+                return new Date(b.date) - new Date(a.date)
+            })
+            document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triDate)
+        }
+
+        if (event.key === "Enter" && event.target.innerHTML === "Titre") {
+            //console.log("Titre");
+            newSelect.nextSibling.classList.toggle("selectHide")
+            newSelect.classList.toggle("active")
+            newSelect.innerHTML = "Titre"
+
+            const triTitre = medias.sort((a, b) => {
+                return a.title.localeCompare(b.title)
+            })
+            document.querySelector(".portfolio-section").innerHTML = createPhotographerMedia(triTitre)
+        }
+
+        counterLikes()
+        const mediasElements = document.querySelectorAll(".media")
+        mediasElements.forEach((media, index) => {
+            media.addEventListener("click", () => {
+                lightbox(medias, medias[index])
+            })
+        })
     })
 
     main.appendChild(sortContainer)
-    
 }

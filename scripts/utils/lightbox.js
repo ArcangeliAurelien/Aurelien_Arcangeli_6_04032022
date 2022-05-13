@@ -28,20 +28,13 @@ export function lightbox(medias, media) {
 
     let actuelMediaId = media.id
     //console.log(actuelMediaId);
-    
 
     const lightbox_media = document.querySelector(".lightbox_media")
-    const video = document.querySelector(".video")
 
     lightbox_media.innerHTML = `
         ${factory(media,"light")}
         <p class="lightbox_title">${media.title}</p>
     `
-    if (media.video !== undefined) {
-        
-        //factory(media).setAttribute("controls", true);
-    }
-    console.log(factory(media));
 
     //Média suivant au clic sur la flèche droite
     next.addEventListener("click", () => {
@@ -98,6 +91,7 @@ export function lightbox(medias, media) {
         if (event.key === "ArrowLeft") {
             prevPicture()
         }
+
     })
 
 }
