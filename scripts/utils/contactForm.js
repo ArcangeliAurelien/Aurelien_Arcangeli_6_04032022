@@ -1,3 +1,21 @@
+fetch("./data/photographers.json")
+    .then((res) => res.json())
+    .then((data) => {
+        let verifyUrl = new URLSearchParams(window.location.search)
+        //verifyUrl.has(photographer.id);
+        let photographeId = verifyUrl.get('photographer')
+
+        const photographerProfile = data.photographers.find(e => e.id == photographeId)
+        const name = photographerProfile.name
+        console.log(name);
+        const contact_head = document.querySelector(".contact_head")
+        console.log(contact_head);
+        contact_head.innerHTML = `<div><h2>Contactez-moi</h2>
+            <h2>${name}</h2></div>
+            <img src="assets/icons/close.svg" alt="fermer" onclick="closeModal()" />`
+
+    })    
+
 function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
