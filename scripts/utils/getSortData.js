@@ -193,6 +193,11 @@ export function getSortData(medias) {
             media.addEventListener("click", () => {
                 lightbox(medias, medias[index])
             })
+            media.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    lightbox(medias, medias[index]) 
+                }
+            })
         })
     })
 
