@@ -8,6 +8,7 @@ fetch("./data/photographers.json")
         const photographerProfile = data.photographers.find(e => e.id == photographeId)
         const name = photographerProfile.name
         console.log(name);
+        
         const contact_head = document.querySelector(".contact_head")
         console.log(contact_head);
         contact_head.innerHTML = `<div><h2>Contactez-moi</h2>
@@ -16,11 +17,13 @@ fetch("./data/photographers.json")
 
     })    
 
+// Ouvrir la modale
 function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
 }
 
+// Fermer la modale
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
@@ -29,6 +32,7 @@ function closeModal() {
 let myForm = document.getElementById('myForm');
 myForm.addEventListener('submit', validation);
 
+// Fermeture de la modale contact avec le clavier
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         closeModal()
@@ -39,6 +43,7 @@ document.addEventListener("keydown", (event) => {
 let myRegexName = /^[a-zA-Zàáâäçèéêëìíîïñòóôöùúûü-\s]+$/;
 let myRegexEmail = /^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})$/;
 
+// Vérifier la validité du prénom
 function first() {
     let checkFirst = document.getElementById('first')
     let erreurFirst = document.getElementById('erreurFirst');
@@ -59,6 +64,7 @@ function first() {
     };
 }
 
+// Vérifier la validité du nom
 function last() {
     let checkLast = document.getElementById('last');
     let erreurLast = document.getElementById('erreurLast');
@@ -79,6 +85,7 @@ function last() {
     };
 }
 
+// Vérifier la validité de l'adresse mail
 function email() {
     let checkEmail = document.getElementById('email');
     let erreurEmail = document.getElementById('erreurEmail');
@@ -99,6 +106,7 @@ function email() {
     };
 }
 
+// Vérifier le contenu du message
 function message() {
     let checkTextarea = document.getElementById('textarea')
     let erreurTextarea = document.getElementById('erreurTextarea')
@@ -115,6 +123,7 @@ function message() {
     }
 }
 
+// Valider les champs
 function validation(e) {
     e.preventDefault()
 

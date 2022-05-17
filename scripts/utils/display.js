@@ -1,5 +1,6 @@
 import { profileFactory } from "../factories/photographer.js";
 
+// Vérifie le profile du photographe
 export async function getData() {
     const response = await fetch("./data/photographers.json")
     const data = await response.json()

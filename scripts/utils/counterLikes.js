@@ -37,11 +37,14 @@ export function counterLikes() {
 
             likes.addEventListener("click", () => {
 
+                // Ajoute 1 au compteur de likes
                 let cpt = parseInt(nb_likes[i].textContent) + 1
                 nb_likes[i].innerHTML = cpt
 
+                // Somme des likes d'un média
                 let sumTotal = sum += 1
-                // console.log("total", sumTotal)
+                
+                // Somme totale de tous les likes des médias du photographe
                 totalLike.innerHTML = sumTotal + " " + `<i class="fas fa-heart"></i>`
                 zonePrice.innerHTML = price + "€/jour"
                 

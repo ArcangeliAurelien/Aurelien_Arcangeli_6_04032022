@@ -62,6 +62,7 @@ export function getSortData(medias) {
     const newMenu = document.createElement("ul")
     newMenu.classList.add("selectItems", "selectHide")
 
+    // Lier les options du select avec la liste déroulante custom
     for (let option of select.options) {
         const newOption = document.createElement("li")
         newOption.innerHTML = option.innerHTML
@@ -83,6 +84,7 @@ export function getSortData(medias) {
 
     zoneSelect.appendChild(newMenu)
 
+    // Afficher ou masquer la liste déroulante au clic
     newSelect.addEventListener("click", function (e) {
         e.stopPropagation()
         this.nextSibling.classList.toggle("selectHide")
@@ -144,7 +146,7 @@ export function getSortData(medias) {
         }
     })
 
-    // Sélectionne l'une des option du select et fait le tri
+    // Sélectionne l'une des options du select et fait le tri
     newMenu.addEventListener("keydown", function (event) {
         const zoneInfo = document.querySelector(".zoneInfo")
         zoneInfo.innerHTML = "";

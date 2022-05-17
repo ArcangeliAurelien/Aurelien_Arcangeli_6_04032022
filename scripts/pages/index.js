@@ -21,6 +21,7 @@ async function displayData(photographers) {
     });
 };
 
+// Initialise la page index avec tous les photographes
 async function indexInit() {
     const { photographers } = await getPhotographers();
     console.log(photographers);

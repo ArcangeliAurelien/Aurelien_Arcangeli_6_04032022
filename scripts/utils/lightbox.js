@@ -6,9 +6,9 @@ export function lightbox(medias, media) {
     const lightbox = document.querySelector(".lightbox")    
 
     lightbox.innerHTML = `
-            <button class="lightbox_next">Suivant</button>
-            <button class="lightbox_prev">Précédent</button>
-            <button class="lightbox_close">Fermer</button>
+            <button class="lightbox_next" aria-label="Suivant">Suivant</button>
+            <button class="lightbox_prev" aria-label="Précédent">Précédent</button>
+            <button class="lightbox_close" aria-label="Fermer">Fermer</button>
             <div class="lightbox_container">
                 <div class="lightbox_media"></div>
             </div>
@@ -18,10 +18,10 @@ export function lightbox(medias, media) {
     const next = document.querySelector(".lightbox_next")
     const prev = document.querySelector(".lightbox_prev")
 
-    //Ouvrir la lightbox
+    // Ouvrir la lightbox
     lightbox.style.display = "block"
     
-    //Fermer la lightbox
+    // Fermer la lightbox
     close.addEventListener("click", () => {
         lightbox.style.display = "none"
     })
@@ -31,6 +31,7 @@ export function lightbox(medias, media) {
 
     const lightbox_media = document.querySelector(".lightbox_media")
 
+    // Afficher le contenu de la lightbox
     lightbox_media.innerHTML = `
         ${factory(media,"light")}
         <p class="lightbox_title">${media.title}</p>

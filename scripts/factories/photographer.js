@@ -5,7 +5,8 @@ export function photographerFactory(data) {
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`
 
     function getUserCardDOM() {
-        //Création des balises d'emplacement de chaque partie qui constitue la card
+        
+        // Création des balises d'emplacement de chaque partie qui constitue la card
         const article = document.createElement( 'article' )
         const h2 = document.createElement( 'h2' )
         h2.textContent = name;
