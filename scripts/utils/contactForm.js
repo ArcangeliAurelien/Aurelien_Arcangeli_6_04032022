@@ -7,20 +7,20 @@ fetch("./data/photographers.json")
 
         const photographerProfile = data.photographers.find(e => e.id == photographeId)
         const name = photographerProfile.name
-        console.log(name);
+        //console.log(name);
         
         const contact_head = document.querySelector(".contact_head")
-        console.log(contact_head);
+        
         contact_head.innerHTML = `<div><h2>Contactez-moi</h2>
             <h2>${name}</h2></div>
             <img src="assets/icons/close.svg" alt="fermer" onclick="closeModal()" />`
 
-    })    
+    })
 
 // Ouvrir la modale
 function displayModal() {
     const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
+    modal.style.display = "block";
 }
 
 // Fermer la modale

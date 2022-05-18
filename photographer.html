@@ -30,29 +30,29 @@
 				<form id="myForm">
 					<div>
 						<label for="first">Prénom</label>
-						<input type="text" id="first"/>
+						<input type="text" id="first" tabindex="3"/>
             <span id="erreurFirst" class="error"></span>
 					</div>
 
           <div>
             <label for="last">Nom</label>
-            <input type="text" id="last"/>
+            <input type="text" id="last" tabindex="3"/>
             <span id="erreurLast" class="error"></span>
           </div>
 
           <div>
             <label for="email">Email</label>
-            <input type="email" id="email"/>
+            <input type="email" id="email" tabindex="3"/>
             <span id="erreurEmail" class="error"></span>
           </div>
 
           <div>
             <label for="textarea">Votre message</label>
-            <textarea name="textarea" id="textarea"></textarea>
+            <textarea name="textarea" id="textarea" tabindex="3"></textarea>
             <span id="erreurTextarea" class="error"></span>
           </div>
 
-          <button class="contact_button" type="submit" onsubmit="validation()">Envoyer</button>
+          <button class="contact_button" type="submit" onsubmit="validation()" tabindex="3">Envoyer</button>
 				</form>
 			</div>
 		</div>

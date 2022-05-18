@@ -28,6 +28,7 @@ export function getSortData(medias) {
 
     const zoneSelect = document.createElement("div")
     zoneSelect.classList.add("custom-select")
+    zoneSelect.setAttribute("tabindex", -1)
     sortContainer.appendChild(zoneSelect)
 
     const select = document.createElement("select")
@@ -53,7 +54,7 @@ export function getSortData(medias) {
     // Custom de la liste déroulante
     const newSelect = document.createElement("div")
     newSelect.classList.add("newSelect")
-    newSelect.setAttribute("tabindex", 3)
+    newSelect.setAttribute("tabindex", -1)
 
     newSelect.innerHTML = select.options[select.selectedIndex].innerHTML
 
@@ -66,7 +67,7 @@ export function getSortData(medias) {
     for (let option of select.options) {
         const newOption = document.createElement("li")
         newOption.innerHTML = option.innerHTML
-        newOption.setAttribute("tabindex", 3)
+        newOption.setAttribute("tabindex", 4)
 
         newOption.addEventListener("click", function () {
             for (let option of select.options) {

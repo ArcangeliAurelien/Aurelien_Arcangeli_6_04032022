@@ -30,7 +30,7 @@ export function lightbox(medias, media) {
     //console.log(actuelMediaId);
 
     const lightbox_media = document.querySelector(".lightbox_media")
-
+    
     // Afficher le contenu de la lightbox
     lightbox_media.innerHTML = `
         ${factory(media,"light")}
@@ -55,7 +55,7 @@ export function lightbox(medias, media) {
         //Si le média est le dernier élément du tableau medias
         if (actuelIndex !== medias.length) {
             lightbox_media.innerHTML = `
-                ${factory(medias[actuelIndex + 1])}
+                ${factory(medias[actuelIndex + 1], "light")}
                 <p class="lightbox_title">${medias[actuelIndex + 1].title}</p>
             `
         }
@@ -71,7 +71,7 @@ export function lightbox(medias, media) {
         //Si le média est le premier élément du tableau medias
         if (actuelIndex !== 0) {
             lightbox_media.innerHTML = `
-                ${factory(medias[actuelIndex - 1])}
+                ${factory(medias[actuelIndex - 1], "light")}
                 <p class="lightbox_title">${medias[actuelIndex - 1].title}</p>
             `
         }

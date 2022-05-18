@@ -41,7 +41,7 @@ export function profileFactory(data) {
                             <h3>${city}, ${country}</h3>
                             <h4>${tagline}</h4>
                         </div>
-                        <button class="contact_button" onclick="displayModal()" tabindex="2">Contactez-moi</button>
+                        <button class="contact_button" onclick="displayModal()" tabindex="2" aria-label="Contactez-moi">Contactez-moi</button>
                         <img src="${picture}" />`
 
         return (div)
