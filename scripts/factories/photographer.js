@@ -17,7 +17,7 @@ export function photographerFactory(data) {
         const p = document.createElement( 'p' )
         p.textContent = price + '€/jour'
         article.innerHTML = `<a href="photographer.html?photographer=${id}">
-                                <img src="${picture}" alt="${alt}" /></a>`
+                                <img src="${picture}" alt="${alt}" aria-label="${name}" /></a>`
         article.appendChild(h2)
         article.appendChild(h3)
         article.appendChild(h4)

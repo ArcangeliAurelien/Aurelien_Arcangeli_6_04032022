@@ -29,6 +29,7 @@ export function getSortData(medias) {
     const zoneSelect = document.createElement("div")
     zoneSelect.classList.add("custom-select")
     zoneSelect.setAttribute("tabindex", -1)
+    zoneSelect.setAttribute("role", "button")
     sortContainer.appendChild(zoneSelect)
 
     const select = document.createElement("select")
@@ -54,7 +55,7 @@ export function getSortData(medias) {
     // Custom de la liste déroulante
     const newSelect = document.createElement("div")
     newSelect.classList.add("newSelect")
-    newSelect.setAttribute("tabindex", -1)
+    newSelect.setAttribute("tabindex", 4)
 
     newSelect.innerHTML = select.options[select.selectedIndex].innerHTML
 
@@ -68,6 +69,19 @@ export function getSortData(medias) {
         const newOption = document.createElement("li")
         newOption.innerHTML = option.innerHTML
         newOption.setAttribute("tabindex", 4)
+        newOption.setAttribute("role", "listbox")
+        newOption.setAttribute("aria-activedescendant", "")
+        newOption.setAttribute("aria-selected", "")
+        
+        if (newOption.innerHTML === "Populaire") {
+            newOption.setAttribute("aria-labelledby", "populaire")
+        }
+        if (newOption.innerHTML === "Date") {
+            newOption.setAttribute("aria-labelledby", "date")
+        }
+        if (newOption.innerHTML === "Titre") {
+            newOption.setAttribute("aria-labelledby", "titre")
+        }
 
         newOption.addEventListener("click", function () {
             for (let option of select.options) {
@@ -77,6 +91,7 @@ export function getSortData(medias) {
                     break
                 }
             }
+
             newSelect.click()
         })
 
@@ -191,9 +206,6 @@ export function getSortData(medias) {
         counterLikes()
         const mediasElements = document.querySelectorAll(".media")
         mediasElements.forEach((media, index) => {
-            media.addEventListener("click", () => {
-                lightbox(medias, medias[index])
-            })
             media.addEventListener("keydown", (e) => {
                 if (e.key === "Enter") {
                     lightbox(medias, medias[index]) 
