@@ -13,7 +13,7 @@ fetch("./data/photographers.json")
         
         contact_head.innerHTML = `<div><h2>Contactez-moi</h2>
             <h2>${name}</h2></div>
-            <img src="assets/icons/close.svg" alt="fermer" onclick="closeModal()" />`
+            <img src="assets/icons/close.svg" alt="fermer" onclick="closeModal()" aria-label="Close Contact form"/>`
 
     })
 

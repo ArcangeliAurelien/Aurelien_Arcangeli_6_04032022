@@ -27,7 +27,7 @@ export function photographerFactory(data) {
     return { name, picture, id, city, country, tagline, price, getUserCardDOM }
 }
 
-// Créer les pages pour chaque photographes
+// Créer les pages de profile pour chaque photographes
 export function profileFactory(data) {
     const { name, city, country, tagline, portrait } = data
 
@@ -41,7 +41,7 @@ export function profileFactory(data) {
                             <h3>${city}, ${country}</h3>
                             <h4>${tagline}</h4>
                         </div>
-                        <button class="contact_button" onclick="displayModal()" tabindex="2" aria-label="Contactez-moi">Contactez-moi</button>
+                        <button class="contact_button" onclick="displayModal()" tabindex="2" aria-labelledby="Contact me ${name}">Contactez-moi</button>
                         <img src="${picture}" />`
 
         return (div)
