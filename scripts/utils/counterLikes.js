@@ -41,10 +41,10 @@ export function counterLikes() {
                 let cpt = parseInt(nb_likes[i].textContent) + 1
                 nb_likes[i].innerHTML = cpt
 
-                // Somme des likes d'un média
+                // Somme des likes de tous les médias
                 let sumTotal = sum += 1
                 
-                // Somme totale de tous les likes des médias du photographe
+                // Ajout des likes en plus au total des likes
                 totalLike.innerHTML = sumTotal + " " + `<i class="fas fa-heart"></i>`
                 zonePrice.innerHTML = price + "€/jour"
                 
