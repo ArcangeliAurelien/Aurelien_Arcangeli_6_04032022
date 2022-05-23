@@ -116,7 +116,6 @@ export function getSortData(medias) {
         function tri() {
 
             if (event.target.innerHTML === "Populaire") {
-                //console.log("populaire")
                 const triPopulaire = medias.sort((a, b) => {
                     return b.likes - a.likes
                 })
@@ -124,7 +123,6 @@ export function getSortData(medias) {
             }
 
             if (event.target.innerHTML === "Date") {
-                //console.log("date")
                 const triDate = medias.sort((a, b) => {
                     return new Date(b.date) - new Date(a.date)
                 })
@@ -132,7 +130,6 @@ export function getSortData(medias) {
             }
 
             if (event.target.innerHTML === "Titre") {
-                //console.log("titre")
                 const triTitre = medias.sort((a, b) => {
                     return a.title.localeCompare(b.title)
                 })
@@ -168,7 +165,6 @@ export function getSortData(medias) {
         zoneInfo.innerHTML = "";
 
         if (event.key === "Enter" && event.target.innerHTML === "Populaire") {
-            //console.log("Populaire");
             newSelect.nextSibling.classList.toggle("selectHide")
             newSelect.classList.toggle("active")
             newSelect.innerHTML = "Populaire"
@@ -180,7 +176,6 @@ export function getSortData(medias) {
         }
 
         if (event.key === "Enter" && event.target.innerHTML === "Date") {
-            //console.log("Date");
             newSelect.nextSibling.classList.toggle("selectHide")
             newSelect.classList.toggle("active")
             newSelect.innerHTML = "Date"
@@ -192,7 +187,6 @@ export function getSortData(medias) {
         }
 
         if (event.key === "Enter" && event.target.innerHTML === "Titre") {
-            //console.log("Titre");
             newSelect.nextSibling.classList.toggle("selectHide")
             newSelect.classList.toggle("active")
             newSelect.innerHTML = "Titre"

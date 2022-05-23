@@ -5,7 +5,6 @@ async function getPhotographers() {
     // Récupère les datas des photographes
     const response = await fetch("./data/photographers.json")
     const data = await response.json()
-    //console.log(data)
 
     return { photographers: data.photographers }
 }
@@ -24,7 +23,6 @@ async function displayData(photographers) {
 // Initialise la page index avec tous les photographes
 async function indexInit() {
     const { photographers } = await getPhotographers();
-    console.log(photographers);
     displayData(photographers);
 };
     

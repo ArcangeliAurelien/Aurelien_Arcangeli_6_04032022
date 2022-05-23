@@ -8,7 +8,6 @@ import { lightbox } from "../utils/lightbox.js"
 
 async function init() {
     let verifyUrl = new URLSearchParams(window.location.search)
-    //verifyUrl.has(photographer.id);
     let photographeId = verifyUrl.get('photographer')
     
     const { data } = await getData()
@@ -33,7 +32,6 @@ async function init() {
         // Evénement au clavier
         media.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
-                console.log("Entrer");
                 lightbox(medias, medias[index])
             }
         })

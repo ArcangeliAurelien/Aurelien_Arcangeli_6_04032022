@@ -1,7 +1,6 @@
 import { factory } from "../factories/mediaFactory.js"
 
 export function lightbox(medias, media) {
-    //console.log("medias", medias);
 
     const lightbox = document.querySelector(".lightbox")    
 
@@ -27,7 +26,6 @@ export function lightbox(medias, media) {
     })
 
     let actuelMediaId = media.id
-    //console.log(actuelMediaId);
 
     const lightbox_media = document.querySelector(".lightbox_media")
     

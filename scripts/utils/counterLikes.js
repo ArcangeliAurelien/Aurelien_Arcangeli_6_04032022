@@ -4,7 +4,6 @@ export function counterLikes() {
         .then((res) => res.json())
         .then((data) => {
             let verifyUrl = new URLSearchParams(window.location.search)
-            //verifyUrl.has(photographer.id);
             let photographeId = verifyUrl.get('photographer')
             
             const photographerProfile = data.photographers.find(e => e.id == photographeId)
@@ -29,7 +28,6 @@ export function counterLikes() {
             let likes = likesButton[i]
 
             arrayCounterLike.push(parseInt(nb_likes[i].textContent))
-            //console.log(arrayCounterLike[i]);
             sum += arrayCounterLike[i]
 
             totalLike.innerHTML = sum + " " + `<i class="fas fa-heart"></i>`
@@ -57,7 +55,6 @@ export function counterLikes() {
                     nb_likes[i].innerHTML = cpt
 
                     let sumTotal = sum += 1
-                    // console.log("total", sumTotal)
                     totalLike.innerHTML = sumTotal + " " + `<i class="fas fa-heart"></i>`
                     zonePrice.innerHTML = price + "€/jour"
                     

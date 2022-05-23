@@ -13,10 +13,6 @@ export function createPhotographerMedia(photographerPersonalInfo) {
     let htmlMediaContent = "";
 
     const k = photographerPersonalInfo.length;
-    /*console.log(factory(photographerPersonalInfo[0]))
-    console.log(factory(photographerPersonalInfo[1]))
-    console.log(factory(photographerPersonalInfo[8]))*/
-    //console.log(photographerPersonalInfo)
 
     for (let i = 0; i < k; i++) {
 

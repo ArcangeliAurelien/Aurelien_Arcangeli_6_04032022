@@ -2,12 +2,10 @@ fetch("./data/photographers.json")
     .then((res) => res.json())
     .then((data) => {
         let verifyUrl = new URLSearchParams(window.location.search)
-        //verifyUrl.has(photographer.id);
         let photographeId = verifyUrl.get('photographer')
 
         const photographerProfile = data.photographers.find(e => e.id == photographeId)
         const name = photographerProfile.name
-        //console.log(name);
         
         const contact_head = document.querySelector(".contact_head")
         
